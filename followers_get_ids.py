@@ -14,7 +14,7 @@ twitter = OAuth1Session(CK, CS, AT, ATS)
 follower_ids_url = 'https://api.twitter.com/1.1/followers/ids.json'
 
 #コマンドライン引数で『user_id』を渡すようにする。
-user_id = sys.argv
+user_id = sys.argv[1]
 
 # 取得件数
 count = 5

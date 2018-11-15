@@ -14,13 +14,11 @@ twitter = OAuth1Session(CK, CS, AT, ATS)
 url = "https://api.twitter.com/1.1/statuses/user_timeline.json"
 
 #コマンドライン引数で『user_id』を渡すようにする。
-user_id = sys.argv
+user_id = sys.argv[1]
 
 # 取得数
 params ={'user_id' : user_id, 'count' : 5}
 res = twitter.get(url, params = params)
-
-timelines = json.loads(res.text)
 
 if res.status_code == 200: #正常通信出来た場合
     timelines = json.loads(res.text) #レスポンスからタイムラインリストを取得
